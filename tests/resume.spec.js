@@ -66,13 +66,13 @@ test('Check Page Title', async ({ page }) => {
 
 test('Check SEO Meta Description', async ({ page }) => {
   await page.goto(resumeURL);
-  const metaDescription = await page.getAttribute('meta[name="description"]', 'content');
+  const metaDescription = await page.getAttribute('meta[name="description"]', 'My resume');
   await expect(metaDescription).not.toBe('');
 });
 
 test('Check SEO Meta Keywords', async ({ page }) => {
   await page.goto(resumeURL);
-  const metaKeywords = await page.getAttribute('meta[name="keywords"]', 'content');
+  const metaKeywords = await page.getAttribute('meta[name="keywords"]', 'resume, jobs, career');
   await expect(metaKeywords).not.toBe('');
 });
 
